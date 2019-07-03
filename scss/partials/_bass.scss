@@ -1,0 +1,154 @@
+*, :after, :before {
+	box-sizing: border-box;
+	font-weight: 300;
+
+}
+:root {
+	scroll-behavior: smooth;
+}
+body {
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-size: .64rem;
+	color: $black;
+	background-color: $primWhite;
+	font-family: 'IBM Plex Sans', sans-serif;
+	h1, h2, h3 {
+		font-family: 'IBM Plex Sans', sans-serif;
+	}
+}
+
+.sans {
+	font-family: 'IBM Plex Sans', sans-serif;
+	
+}
+
+.serif {
+	font-family: 'Roboto Slab', serif;
+	
+}
+
+nav {
+	background: rgb(55, 71, 89);
+
+	position: fixed;
+	top: 0;
+	z-index: 9;
+	padding: 1em 1.75em;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	font-size: 1.2em;
+	height: 7.5em;
+	transition: all 400ms $bloop;
+	box-shadow: 0 -1px 1px #fff;
+	img {
+		display: flex;
+		width: 2.3em;
+		height: 2.3em;
+	}
+	.cta {
+		font-size: 1.1em;
+		display: flex;
+		width: 100%;
+		justify-content: flex-end;
+		align-items: center;
+		a {
+			text-decoration: none;
+			color: #fff;
+			transition: color 500ms ease, background 400ms ease;
+			padding: .4em 1.2em;
+			border-radius: 2em;
+			margin-left: .5em;
+			filter: invert(0);
+			&:hover {
+				color: #000;
+				background: #fff;
+			}
+		}
+	}
+}
+.back {
+	height: 3.5em;
+}
+video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: auto;
+	min-width: 100%;
+	opacity: .15;
+}
+header {
+	overflow: hidden;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: $secBlue;
+	position: relative;
+	background: #dfdfdf;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 110vh;
+	font-size: 2em;
+	line-height: 1.5em;
+	z-index: -1;
+	h1 {
+		transform: translateY(-1em);
+		font-size: 2.8em;
+		font-weight: 700;
+		letter-spacing: 2px;
+	}
+	h2 {
+		transform: translateY(-2em);
+		font-size: 1.4em;
+	}
+	p {
+		max-width: 30em;
+		margin: 0 auto;
+		font-size: .9em;
+		transform: translateY(-3em);
+
+	}
+}
+
+
+footer {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: $primWhite;
+	position: relative;
+	background-color: $secBlue;
+	height: 60vh;
+	font-size: 2em;
+	z-index: 2;
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 50%;
+		transform-origin: right;
+		transform: skewY(2deg);
+		background-color: $secBlue;
+		z-index: -1;
+	}
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: 50%;
+		transform-origin: left;
+		transform: skewY(-2deg);
+		background-color: $secBlue;
+		z-index: -1;
+	}
+}

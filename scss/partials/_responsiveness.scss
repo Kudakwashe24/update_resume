@@ -1,0 +1,83 @@
+
+@media (max-width: 1280px) {
+	.cta {
+		a {
+			font-size: .8em;
+		}
+	}
+	.project_grid, .testimonial_grid {
+		max-width: 960px;
+		width: 95%;
+	}
+	.container_about {
+		position: relative;
+		grid-template-columns: 1fr;
+		.about_figure{
+			width: 10em;
+			height: 10em;
+			transform: translateX(-50%);
+			position: absolute;
+			top: -8.5em;
+			left: 50%;
+			img {
+				border-radius: 50%;
+				transform: scale(1);
+				width: 7em;
+				height: 7em;
+				// border: 1px solid $primBlue;
+			}
+		}
+	}
+	.logo_bar {
+		height: 1.5em;
+		img {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.project_grid {
+
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.testimonial_grid {
+		grid-row-gap: 4em; 
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.profile {
+		font-size: .7em;
+	}
+}
+@media (max-width: 640px) {
+
+	body {
+		font-size: .6em;
+	}
+	.project_grid {
+		font-size: .9em;
+		.caption {
+			font-size: 1.1em;
+		}
+	}
+	.profile {
+		font-size: 1em;
+		top: -.7em;
+	}
+}
+@media (max-width: 580px) {
+	.testimonial_grid {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+@media (max-width: 480px) {
+	header {
+		font-size: 1.5em;
+	}
+	.project_grid {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+
+}
+

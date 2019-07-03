@@ -1,0 +1,368 @@
+.project_grid {
+	font-size: 1.025em;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	margin: 0 auto;
+	max-width: 90em;
+	width: 75%;
+	grid-gap: 2em;
+	img {
+		display: block;
+		width: auto;
+		height: auto;
+		padding: 0;
+		margin: 0;
+		max-width: 100%;
+		transition: transform 200ms $bloop;
+		transform: scale(1);
+	}
+}
+.caption {
+	text-align: center;
+	background-color: $primWhite;
+	min-height: 8em;
+	display: grid;
+	grid-template-columns: 5fr 1fr;	
+
+}
+.figure {
+	text-align: center;
+	color: $primWhite;
+	font-size: 1.5em;
+	position: relative;
+	overflow: hidden;
+	&:hover {
+		img {
+			transform: scale(1.04);
+		}
+		.hide {
+			opacity: 1;
+		}
+	}
+	a {
+		text-decoration: none;
+		color: inherit;
+		padding: 0.35em 0.55em;
+		border: 1px solid $primWhite;
+		transition: all 200ms ease-out;
+		font-family: 'IBM Plex Sans', sans-serif;
+		position: relative;
+		z-index: 1;
+		transform: translateX(3em);
+		overflow: hidden;
+		&:before {
+			content: '';
+			position: absolute;
+			background-color: $primWhite;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 0%;
+			transition: all 150ms $bloop;
+			z-index: -1;
+		}
+		&:hover {
+			&:before {
+				height: 100%;
+			}
+			color: $primBlue;
+			border: 1px solid $primWhite;
+
+		}
+	}
+	.hide {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background-color: $primBlue;
+		opacity: 0;
+		transition: opacity 250ms $bloop;
+	}
+}
+.project_item {
+	box-shadow: 0 0 30px #11111102;
+}
+	
+.description {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: left;
+	padding: 1em;
+	font-size: 1.3em;
+}
+
+.icons {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	padding: .25em;
+	width: 100%;
+	text-align: center;
+
+
+}
+.js, .css, .php, .vue, .my, .jq {
+	color: $primWhite;
+	padding: 0.1em 0.25em;
+	margin: 0.25em auto;
+	width: 1.2em;
+	height: 1.2em;
+	border-radius: 50%;
+	position: relative;
+	&:after {
+		position: absolute;
+		top: 0;
+		border-radius: 1em;
+		left: 17%;
+		width: 0em;
+		height: 1.2em;
+		overflow: hidden;
+		transition: width 125ms ease-out;
+		z-index: 999;
+	}
+}
+
+.js {
+	background-color: $js;
+	&:hover {
+		&::after {
+			width: 2.5em;
+		}
+	}
+	&::after {
+		background-color: $js;
+		content: 'js';
+	}
+}
+.jq {
+	background-color: $js;
+	&:hover {
+		&::after {
+			width: 4em;
+		}
+	}
+	&::after {
+		background-color: $js;
+		content: 'jquery';
+	}
+}
+.css {
+	background-color: $css;
+	&:hover {
+		&::after {
+			width: 2.5em;
+
+		}
+	}
+	&::after {
+		background-color: $css;
+		content: 'css';
+	}
+}
+.my {
+	background-color: $vue;
+	&:hover {
+		&::after {
+			width: 4em;
+
+		}
+	}
+	&::after {
+		background-color: $vue;
+		content: 'mysql';
+	}
+}
+.php {
+	background-color: $php;
+	&:hover {
+		&::after {
+			width: 2.5em;
+
+		}
+	}
+	&::after {
+		background-color: $php;
+		content: 'php';
+	}
+}
+.vue {
+	background-color: $vue;
+	&:hover {
+		&::after {
+			width: 2.5em;
+
+		}
+	}
+	&::after {
+		background-color: $vue;
+		content: 'vue';
+	}
+}
+
+.contact_icons {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	font-size: 1em;
+	grid-gap: .5em;
+	max-width: 768px;
+	width: 90%;
+	margin: 0;
+	z-index: 999;
+	a {
+		text-decoration: none;
+	}
+	i {
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 1.75em;
+		height: 1.75em;
+		background-color: #ffffffee;
+		transition: background-color 200ms ease-out, color 200ms ease-out;
+		color: $primBlue;
+	}
+	a:hover {
+		i {
+			color: $primWhite;
+			background-color: transparent;
+		}
+	}
+}
+.flex_center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.profile {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 4em;
+	padding: 0 2em;
+	// border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $primBlue;
+	color: $primWhite;
+	font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.copy {
+	color: $primWhite;
+	position: absolute;
+	bottom: 1em;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: .75em;
+	font-family: 'IBM Plex Sans', sans-serif;
+	span {
+		font-weight: 700;
+	}
+}
+
+.scroll-down {
+	position: fixed;
+	bottom: 4em;
+	left: 50%;
+	color: $secBlue;
+	text-decoration: none;
+	opacity: .7;
+	font-size: .8em;
+	animation: scroll 1000ms ease-in-out infinite;
+	&:after {
+		content: '';
+		width: 1px;
+		height: 5em;
+		position: absolute;
+		bottom: -6em;
+		left: 50%;
+		background-color: $secBlue;
+		z-index: -1;
+	}
+}
+.progress {
+	display: none;
+	font-size: .8em;
+	max-width: 80em;
+	margin: 2em auto 15em auto;
+	div {
+		font-size: 1.5em;
+		background: #c1c1c1;
+		padding: .35em;
+		margin: 1em auto;
+		position: relative;
+		text-align: right;
+		&:after {
+			content: attr(data-width);
+			position: absolute;
+			text-align: center;
+			color: #fff;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background-color: $primBlue;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+	.progress-HTML::after {
+		width: 70%;
+	}
+	.progress-CSS::after {
+		width: 75%;
+	}
+	.progress-JS::after {
+		width: 60%;
+	}
+	.progress-VUEJS::after {
+		width: 45%;
+	}
+	.progress-PHP::after {
+		width: 70%;
+	}
+	.progress-MYSQL::after {
+		width: 55%;
+	}
+}
+
+
+.scrolled {
+	background-color: $secBlue;
+}
+
+#up {
+  position: fixed;
+  bottom: 2em; 
+  right: 3em; 
+  z-index: 99; 
+	background: rgb(69, 96, 126);
+	transition: all 300ms $bloop;
+	color: #fff; 
+	opacity: 0;
+	padding: .75em 1em;
+	text-decoration: none;
+	font-size: 1.3em;
+}
+#up:hover {
+  background: rgb(55, 71, 89);
+}
+
+
+@keyframes scroll {
+	0% {
+		transform: translateY(0) translateX(-50%);
+	}
+	50% {
+		transform: translateY(-2px) translateX(-50%);
+	}
+	100% {
+		transform: translateY(0) translateX(-50%);
+	}
+}
