@@ -256,7 +256,7 @@ footer::before {
   text-align: center;
 }
 
-.js, .css, .php, .vue, .my, .jq {
+.js, .css, .php, .vue, .my, .jq, .wordpress, .elementor, .mysql {
   color: #F7F5FA;
   padding: 0.1em 0.25em;
   margin: 0.25em auto;
@@ -265,7 +265,7 @@ footer::before {
   border-radius: 50%;
   position: relative;
 }
-.js:after, .css:after, .php:after, .vue:after, .my:after, .jq:after {
+.js:after, .css:after, .php:after, .vue:after, .my:after, .jq:after, .wordpress:after, .elementor:after, .mysql:after {
   position: absolute;
   top: 0;
   border-radius: 1em;
@@ -331,7 +331,16 @@ footer::before {
   background-color: #6082BB;
   content: "php";
 }
-
+.elementor {
+  background-color: #6082BB;
+}
+.elementor:hover::after {
+  width: 2.5em;
+}
+.elementor::after {
+  background-color: #6082BB;
+  content: "elementor";
+}
 .vue {
   background-color: #41B883;
 }
